@@ -1,0 +1,77 @@
+---
+title: "Lab 7"
+format: html
+editor: visual
+---
+
+Drafting your Title
+
+ENSO-Drought Linkages in Colorado: A Statistical Perspective
+
+
+Drafting the introduction, background, and motivation for your project
+
+Over the past decade, the western United States has experienced hydroclimatic variability that has emerged as a dominant environmental issue of great concern (Balling Jr & Goodrich, 2007). Since 1996, a considerable portion of the western U.S. has seen drought conditions that are similar in scale to the historical droughts in the 1930s and 1950s (Balling Jr & Goodrich, 2007). Studies have also used the paleoclimatic record to reveal evidence of long term droughts over the past 500 to 2,000 years (Woodhouse & Overpeck, 1998). Hydroclimatic variability studies range in scale from regional to watershed. This variability is often complex and may require a multitude of scales to fully understand and plan for future drought conditions.
+In the dry western U.S., Colorado receives less than 17 inches of average annual precipitation statewide. (Mckee et al., 2000). In comparison to the rest of the United States, these rainfall amounts are incredibly sparse. Luckily, Colorado’s Rocky Mountains help alleviate potential water stress by collecting more than 25 inches of precipitation annually (Mckee et al., 2000). By successfully adapting to this dry climate, Colorado supports a massive agricultural and recreational industry and multiple growing urban centers (Mckee et al., 2000). As population and industry grow, the threat of drought and its social, economic, and environmental impacts increase as well. 
+Measuring and assessing drought accurately is essential for future planning. Historical drought data can give valuable insight into influences or indicators of drought conditions. Patterns of climatic variability that aligned with droughts in the past can help our society better prepare for the future. One of these patterns is the influential El Nino and La Nina. El Nino is caused by a warming of the tropical Pacific Ocean that occurs about every three to seven years and lasts for 12-18 months (McPhaden, 2002). La Nina is akin to El Nino with stronger than normal trade winds and cooler tropical Pacific water temperatures (McPhaden, 2002). In recent decades, the El Nino/Southern Oscillation (ENSO) has been more closely monitored, and the strength of each cycle has been documented. The effects of El Nino and La Nina on climate vary considerably across the globe, but in the western U.S., there is a pattern of impacts. During El Nino years, both extremely wet and dry conditions can be expected, while La Nina years are characterized by only dry conditions (Canon et al., 2007). This research aims to analyze interactions between climatic variability indicating drought and the ENSO cycle. 
+To examine interactions between drought conditions and the El Nino/Southern Oscillation (ENSO), we will utilize a variety of climatic data. To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (NASA, n.d.). The unit of SPI can be interpreted as “standard deviations”. We will also use the Drought Monitor of Colorado from the USDM to assess the severity and extent of drought using their standardized classification system. This data uses six classifications to characterize drought severity: normal conditions, abnormally dry (D0), and four levels of drought (D1 to D4) representing moderate, severe, extreme, and exceptional drought conditions, respectively. Lastly, we will utilize SNOTEL snowpack data from the Natural Resource Conservation Service to supplement our drought framework. In order to compare this data to ENSO cycles, we will examine El Niño and La Niña intensities for each year based on the Oceanic Nino Index (ONI). This index is the standard for NOAA used to classify El Nino and La Nina events in the eastern tropical Pacific (Null, n.d.). Events are defined as five consecutive 3-month periods at or above the + 0.5 degrees threshold for warm (El Nino) events and at or below the - 0.5 degrees anomaly for cool (La Nina) events (Null, n.d.). 
+To find correlations between our drought framework and ENSO cycles, we will use R software to conduct statistical tests. First, we will preprocess our data by aligning datasets by date. For snowpack and SPI we will standardise to monthly averages and for drought monitor, we will summarize weekly data to monthly. Our statistical methods will include a correlation analysis to test correlations between ENSO index (ONI) and drought variables. We will use the Pearson correlation coefficient to measure the linear relationship. Then we will use ggplot2 to visualize the trends in a scatter plot and add a linear regression line to help visualize the relationship. If the correlation is significant, we will perform a correlation hypothesis test to provide us with the correlation coefficient and p-value. Next, we will conduct a time series analysis of cross-correlation to look for lagged effects of ENSO on drought parameters. We will also use a linear regression model to model SPI and snowpack as a function of ONI. 
+In conclusion, these findings will help us find a relationship between El Nino/La Nina and drought in Colorado. If so, we can produce the evidence through statistical findings and visual representations, such as a scatter plot and a linear regression model. Considering we are living in a society becoming more conscious about climate change and its environmental impacts, such as more extreme drought events, this project will enforce our involvement in the understanding aspects of our global environment and comprehend to an extent on how global processes impact extreme weather.
+
+
+Sources/Citations
+Balling, R.C., & Goodrich, G.B. (2007). Analysis of drought determinants for the Colorado River Basin. Climatic Change, 82, 179–194. https://doi.org/10.1007/s10584-006-9157-8  
+Canon, J., Gonzalez, J., & Valdes, J. (2007). Precipitation in the Colorado River Basin and its low frequency associations with PDO and ENSO signals. Journal of Hydrology, 333(2-4), 252-264. https://doi.org/10.1016/j.jhydrol.2006.08.015 
+McKee, T. B., Doesken, N. J., Kleist, J., Shrier, C. J., & Stanton, W. P. (2000). A history of drought in Colorado: Lessons learned and what lies ahead. Mountain Scholar, (9). https://api.mountainscholar.org/server/api/core/bitstreams/ef0efa56-be33-419b-8a6b-db671c07ca2c/content
+McPhaden, M. J. (2002). El Nino and La Nina: Causes and Global Consequences. Encyclopedia of Global Environmental Change, 1, 353-370. 
+NASA. (n.d.). Characterizing extremes over Americas. NASA. https://gmao.gsfc.nasa.gov/research/subseasonal/atlas/SPI-html/SPI-description.html 
+Null, J. (n.d.). El Nino and La Nina years and intensities. https://ggweather.com/enso/oni.htm 
+   Simeral, D., & Artusa, A. (2025, April 8). Colorado. | U.S. Drought Monitor. https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO 
+Woodhouse, C. A., and Overpeck, J. T. (1998). 2000 Years of Drought Variability in the Central United States. Bull. Amer. Meteor. Soc., 79, 2693–2714, https://doi.org/10.1175/1520-0477(1998)079<2693:YODVIT>2.0.CO;2. 
+
+
+Exploring your data
+Data for Drought Measurements/Parameters:
+Standardized Precipitation Index (SPI) [link]
+To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (NASA, n.d.). The unit of SPI can be interpreted as “standard deviations”. This data can be characterized as 9 months (1895 to present) or Paleoclimatic data (0 to 2017). SPI data can be separated by state or by county. To clean this data we will standardize monthly averages. 
+
+Fig. 1
+
+
+Drought Monitor for Colorado [link]
+This dataset gives us the ranking of drought intensity in the state of Colorado. The ranking ranges from none, D0-D4. The map provided has the sections that indicate counties, which are colored in respect to the drought intensity. Some of the counties have more than 1 ranking, so we have to make a consensus as to selecting the intensity for the county. There’s a table underneath explaining the week, date, and the intensity of droughts. This data will be cleaned by standardization of data by month in order to measure with our other drought parameters. 
+		- Map based on 2025.
+		- Drought Intensity Scale (none and D0 to D4).
+		- Includes different counties (hover for name of county).
+          
+Fig. 2
+
+
+   Data for El Nino and La Nina:
+
+           	      1.    El Nino/La Nina Intensities for each year [link]
+The ONI (Oceanic Nino Index) classifies El Nino/La Nina events, which runs a 3-month mean. We can categorize the strength of the event, referencing the table provided (years place in their respective event and strength). We will do some categorization of the strength as well as differentiate the events with the given data that’s provided. 
+
+
+
+Fig. 3
+
+
+
+Fig. 4
+		- Includes data from 1952 to 2024, categorized by strength from each year for Nino/Nina.
+		- Graph is included with the link.
+		- Table of 3-month mean ONI values
+
+
+Identify your preliminary methods
+What are you thinking about using to analyze your data to answer your question?
+For libraries we, we are most likely going to use “tidyverse” for data wrangling and visualization, “ggplot2” for graphing, “zoo” for time series data, “dplyr” for data manipulation, “tidyr” for data reshaping, “corrr” for correlation matrices, and “lmtest” for statistical tests. For our statistical analysis, we will most likely use “cor.test” to check for linear relationships between ENSO intensity and SPI, or the spearman method if we are unsure about linearity. After using “geom_boxplot” to visualize if SPI differs between El Niño, La Niña, and neutral years, we will use an Anova test to determine if the difference is significant, and then run a Tukey HSD post hoc test. Finally, to test how ENSO intensity predicts SPI, we will run a linear regression using “lm_model”. 
+Do you have everything you need? What supplemental data might you need?
+We hope to have the materials that we need. Having the 3 dataset above is a good start, and along the way, if we need more data, then we can include them. 
+What are some potential challenges you see in the data?
+We are going to have to find a way to move the data to RStudio. Afterwards, we have to figure out the time scale for this project as to how many years we will include. Finally, we have to find a way to find out if there’s a correlation (or similar) between El Nino/La Nina and drought.
+What are some potential challenges you see in the methods?
+We are hoping that we are able to align our datasets to make sure we can find the correlation and make a graph. We have to make sure that the datasets that we will be using can work in conjunction when it comes to the dates (month, years), SPI, snowpack, etc. If done correctly, we can proceed to do statistical analysis.
+How do the selected methods help you get to your final goal?
+The method helps us find a correlation between ONI and droughts, then perform a hypothesis test to look for correlation coefficient and p-value. We’ll also perform a linear regression model for SPI and snowpack. The findings will ensure us to find a relationship between El Nino.La Nina and drought using the dataset and using the appropriate functions to achieve those results. 
