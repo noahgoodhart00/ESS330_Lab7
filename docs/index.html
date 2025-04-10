@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 7</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Drafting your Title</p>
+<p>ENSO-Drought Linkages in Colorado: A Statistical Perspective</p>
+<p>Drafting the introduction, background, and motivation for your project</p>
+<p>Over the past decade, the western United States has experienced hydroclimatic variability that has emerged as a dominant environmental issue of great concern (Balling Jr &amp; Goodrich, 2007). Since 1996, a considerable portion of the western U.S. has seen drought conditions that are similar in scale to the historical droughts in the 1930s and 1950s (Balling Jr &amp; Goodrich, 2007). Studies have also used the paleoclimatic record to reveal evidence of long term droughts over the past 500 to 2,000 years (Woodhouse &amp; Overpeck, 1998). Hydroclimatic variability studies range in scale from regional to watershed. This variability is often complex and may require a multitude of scales to fully understand and plan for future drought conditions. In the dry western U.S., Colorado receives less than 17 inches of average annual precipitation statewide. (Mckee et al., 2000). In comparison to the rest of the United States, these rainfall amounts are incredibly sparse. Luckily, Colorado’s Rocky Mountains help alleviate potential water stress by collecting more than 25 inches of precipitation annually (Mckee et al., 2000). By successfully adapting to this dry climate, Colorado supports a massive agricultural and recreational industry and multiple growing urban centers (Mckee et al., 2000). As population and industry grow, the threat of drought and its social, economic, and environmental impacts increase as well. Measuring and assessing drought accurately is essential for future planning. Historical drought data can give valuable insight into influences or indicators of drought conditions. Patterns of climatic variability that aligned with droughts in the past can help our society better prepare for the future. One of these patterns is the influential El Nino and La Nina. El Nino is caused by a warming of the tropical Pacific Ocean that occurs about every three to seven years and lasts for 12-18 months (McPhaden, 2002). La Nina is akin to El Nino with stronger than normal trade winds and cooler tropical Pacific water temperatures (McPhaden, 2002). In recent decades, the El Nino/Southern Oscillation (ENSO) has been more closely monitored, and the strength of each cycle has been documented. The effects of El Nino and La Nina on climate vary considerably across the globe, but in the western U.S., there is a pattern of impacts. During El Nino years, both extremely wet and dry conditions can be expected, while La Nina years are characterized by only dry conditions (Canon et al., 2007). This research aims to analyze interactions between climatic variability indicating drought and the ENSO cycle. To examine interactions between drought conditions and the El Nino/Southern Oscillation (ENSO), we will utilize a variety of climatic data. To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (NASA, n.d.). The unit of SPI can be interpreted as “standard deviations”. We will also use the Drought Monitor of Colorado from the USDM to assess the severity and extent of drought using their standardized classification system. This data uses six classifications to characterize drought severity: normal conditions, abnormally dry (D0), and four levels of drought (D1 to D4) representing moderate, severe, extreme, and exceptional drought conditions, respectively. Lastly, we will utilize SNOTEL snowpack data from the Natural Resource Conservation Service to supplement our drought framework. In order to compare this data to ENSO cycles, we will examine El Niño and La Niña intensities for each year based on the Oceanic Nino Index (ONI). This index is the standard for NOAA used to classify El Nino and La Nina events in the eastern tropical Pacific (Null, n.d.). Events are defined as five consecutive 3-month periods at or above the + 0.5 degrees threshold for warm (El Nino) events and at or below the - 0.5 degrees anomaly for cool (La Nina) events (Null, n.d.). To find correlations between our drought framework and ENSO cycles, we will use R software to conduct statistical tests. First, we will preprocess our data by aligning datasets by date. For snowpack and SPI we will standardise to monthly averages and for drought monitor, we will summarize weekly data to monthly. Our statistical methods will include a correlation analysis to test correlations between ENSO index (ONI) and drought variables. We will use the Pearson correlation coefficient to measure the linear relationship. Then we will use ggplot2 to visualize the trends in a scatter plot and add a linear regression line to help visualize the relationship. If the correlation is significant, we will perform a correlation hypothesis test to provide us with the correlation coefficient and p-value. Next, we will conduct a time series analysis of cross-correlation to look for lagged effects of ENSO on drought parameters. We will also use a linear regression model to model SPI and snowpack as a function of ONI. In conclusion, these findings will help us find a relationship between El Nino/La Nina and drought in Colorado. If so, we can produce the evidence through statistical findings and visual representations, such as a scatter plot and a linear regression model. Considering we are living in a society becoming more conscious about climate change and its environmental impacts, such as more extreme drought events, this project will enforce our involvement in the understanding aspects of our global environment and comprehend to an extent on how global processes impact extreme weather.</p>
+<p>Sources/Citations Balling, R.C., &amp; Goodrich, G.B. (2007). Analysis of drought determinants for the Colorado River Basin. Climatic Change, 82, 179–194. https://doi.org/10.1007/s10584-006-9157-8<br>
+Canon, J., Gonzalez, J., &amp; Valdes, J. (2007). Precipitation in the Colorado River Basin and its low frequency associations with PDO and ENSO signals. Journal of Hydrology, 333(2-4), 252-264. https://doi.org/10.1016/j.jhydrol.2006.08.015 McKee, T. B., Doesken, N. J., Kleist, J., Shrier, C. J., &amp; Stanton, W. P. (2000). A history of drought in Colorado: Lessons learned and what lies ahead. Mountain Scholar, (9). https://api.mountainscholar.org/server/api/core/bitstreams/ef0efa56-be33-419b-8a6b-db671c07ca2c/content McPhaden, M. J. (2002). El Nino and La Nina: Causes and Global Consequences. Encyclopedia of Global Environmental Change, 1, 353-370. NASA. (n.d.). Characterizing extremes over Americas. NASA. https://gmao.gsfc.nasa.gov/research/subseasonal/atlas/SPI-html/SPI-description.html Null, J. (n.d.). El Nino and La Nina years and intensities. https://ggweather.com/enso/oni.htm Simeral, D., &amp; Artusa, A. (2025, April 8). Colorado. | U.S. Drought Monitor. https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO Woodhouse, C. A., and Overpeck, J. T. (1998). 2000 Years of Drought Variability in the Central United States. Bull. Amer. Meteor. Soc., 79, 2693–2714, https://doi.org/10.1175/1520-0477(1998)079&lt;2693:YODVIT&gt;2.0.CO;2.</p>
+<p>Exploring your data Data for Drought Measurements/Parameters: Standardized Precipitation Index (SPI) [link] To create a framework for drought, we will use the Standardized Precipitation Index (SPI) from the National Integrated Drought Information System to measure how much observed precipitation deviated from the climatological average. This condition can be measured on a variety of time scales, indicating that the SPI can be useful for both short-term and long-term applications (NASA, n.d.). The unit of SPI can be interpreted as “standard deviations”. This data can be characterized as 9 months (1895 to present) or Paleoclimatic data (0 to 2017). SPI data can be separated by state or by county. To clean this data we will standardize monthly averages.</p>
+<p>Fig. 1</p>
+<p>Drought Monitor for Colorado [link] This dataset gives us the ranking of drought intensity in the state of Colorado. The ranking ranges from none, D0-D4. The map provided has the sections that indicate counties, which are colored in respect to the drought intensity. Some of the counties have more than 1 ranking, so we have to make a consensus as to selecting the intensity for the county. There’s a table underneath explaining the week, date, and the intensity of droughts. This data will be cleaned by standardization of data by month in order to measure with our other drought parameters. - Map based on 2025. - Drought Intensity Scale (none and D0 to D4). - Includes different counties (hover for name of county).</p>
+<p>Fig. 2</p>
+<p>Data for El Nino and La Nina:</p>
+<pre><code>              1.    El Nino/La Nina Intensities for each year [link]</code></pre>
+<p>The ONI (Oceanic Nino Index) classifies El Nino/La Nina events, which runs a 3-month mean. We can categorize the strength of the event, referencing the table provided (years place in their respective event and strength). We will do some categorization of the strength as well as differentiate the events with the given data that’s provided.</p>
+<p>Fig. 3</p>
+<p>Fig. 4 - Includes data from 1952 to 2024, categorized by strength from each year for Nino/Nina. - Graph is included with the link. - Table of 3-month mean ONI values</p>
+<p>Identify your preliminary methods What are you thinking about using to analyze your data to answer your question? For libraries we, we are most likely going to use “tidyverse” for data wrangling and visualization, “ggplot2” for graphing, “zoo” for time series data, “dplyr” for data manipulation, “tidyr” for data reshaping, “corrr” for correlation matrices, and “lmtest” for statistical tests. For our statistical analysis, we will most likely use “cor.test” to check for linear relationships between ENSO intensity and SPI, or the spearman method if we are unsure about linearity. After using “geom_boxplot” to visualize if SPI differs between El Niño, La Niña, and neutral years, we will use an Anova test to determine if the difference is significant, and then run a Tukey HSD post hoc test. Finally, to test how ENSO intensity predicts SPI, we will run a linear regression using “lm_model”. Do you have everything you need? What supplemental data might you need? We hope to have the materials that we need. Having the 3 dataset above is a good start, and along the way, if we need more data, then we can include them. What are some potential challenges you see in the data? We are going to have to find a way to move the data to RStudio. Afterwards, we have to figure out the time scale for this project as to how many years we will include. Finally, we have to find a way to find out if there’s a correlation (or similar) between El Nino/La Nina and drought. What are some potential challenges you see in the methods? We are hoping that we are able to align our datasets to make sure we can find the correlation and make a graph. We have to make sure that the datasets that we will be using can work in conjunction when it comes to the dates (month, years), SPI, snowpack, etc. If done correctly, we can proceed to do statistical analysis. How do the selected methods help you get to your final goal? The method helps us find a correlation between ONI and droughts, then perform a hypothesis test to look for correlation coefficient and p-value. We’ll also perform a linear regression model for SPI and snowpack. The findings will ensure us to find a relationship between El Nino.La Nina and drought using the dataset and using the appropriate functions to achieve those results.</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
