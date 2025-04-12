@@ -13,14 +13,14 @@ data1 <- read_excel(here("data", "Final_Data.xlsx"))
 
 View(data1)
 ```
-#Lab 7: Final Project - Intro/Methods Draft
+# Lab 7: Final Project - Intro/Methods Draft
 
-##Drafting your Title
+## Drafting your Title
 
 ENSO-Drought Linkages in Colorado: A Statistical Perspective
 
 
-##Drafting the introduction, background, and motivation for your project
+## Drafting the introduction, background, and motivation for your project
 
 Over the past decade, the western United States has experienced hydro climatic variability that has emerged as a dominant environmental issue of great concern (Balling Jr & Goodrich, 2007). Since 1996, a considerable portion of the western U.S. has seen drought conditions that are similar in scale to the historical droughts in the 1930s and 1950s (Balling Jr & Goodrich, 2007). Studies have also used the paleoclimatic record to reveal evidence of long term droughts over the past 500 to 2,000 years (Woodhouse & Overpeck, 1998). Hydroclimatic variability studies range in scale from regional to watershed. This variability is often complex and may require a multitude of scales to fully understand and plan for future drought conditions.
 
